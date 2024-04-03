@@ -1,5 +1,6 @@
 package lab7.bank;
 
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +9,7 @@ import utils.In;
 
 public class Customer {
     static DateTimeFormatter DTF = DateTimeFormatter.ofPattern("dd/MM/uuuu - HH:mm:ss");
+    static LocalDateTime NOW = LocalDateTime.now();
     private String name;
     private List<Account> accounts;
 
@@ -81,7 +83,7 @@ public class Customer {
     }
 
     private void show() {        
-        System.out.println(name+" bank statement: "+DTF.format(Bank.NOW));
+        System.out.println(name+" bank statement: "+DTF.format(NOW));
         accounts.forEach(System.out::println);
     }    
     
